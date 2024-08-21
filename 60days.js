@@ -53,41 +53,72 @@
 // }
 
 //****************Add 2D arrays***************
-function addMatrices(matrixA, matrixB) {
-  // Get the number of rows and columns
-  const rows = matrixA.length;
-  const cols = matrixA[0].length;
+// function addMatrices(matrixA, matrixB) {
+//   // Get the number of rows and columns
+//   const rows = matrixA.length;
+//   const cols = matrixA[0].length;
 
-  // Create a new matrix to store the result
-  const result = [];
+//   // Create a new matrix to store the result
+//   const result = [];
 
-  // Loop through each element and add corresponding elements
-  for (let i = 0; i < rows; i++) {
-    const row = [];
-    for (let j = 0; j < cols; j++) {
-      // Add corresponding elements
-      row.push(matrixA[i][j] + matrixB[i][j]);
+//   // Loop through each element and add corresponding elements
+//   for (let i = 0; i < rows; i++) {
+//     const row = [];
+//     for (let j = 0; j < cols; j++) {
+//       // Add corresponding elements
+//       row.push(matrixA[i][j] + matrixB[i][j]);
+//     }
+//     result.push(row);
+//   }
+
+//   return result;
+// }
+
+// const matrixA = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9],
+// ];
+
+// const matrixB = [
+//   [9, 8, 7],
+//   [6, 5, 4],
+//   [3, 2, 1],
+// ];
+
+// // Add the matrices
+// const sumMatrix = addMatrices(matrixA, matrixB);
+
+// // Display the result
+// console.log(sumMatrix);
+
+
+//***************Matrix transposotion  ******************* */
+const  transposeMatrixA = [
+  [1,2,3],
+  [4,5,6]
+];
+
+function transposeMatrix(matrixA){
+  console.log('cols', matrixA[0].length);
+  
+  let  resultedMatrix = [];
+
+  for(let i=0; i<matrixA[0].length; i++){
+    resultedMatrix[i] =[];
+    for(let j=0; j<matrixA.length; j++){
+      resultedMatrix[i][j] = matrixA[j][i];
+        // 1, 2,3
+        // 
     }
-    result.push(row);
   }
 
-  return result;
+  return resultedMatrix;
 }
 
-const matrixA = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9],
-];
+const result = transposeMatrix(transposeMatrixA);
+console.log(result);
 
-const matrixB = [
-  [9, 8, 7],
-  [6, 5, 4],
-  [3, 2, 1],
-];
 
-// Add the matrices
-const sumMatrix = addMatrices(matrixA, matrixB);
 
-// Display the result
-console.log(sumMatrix);
+
